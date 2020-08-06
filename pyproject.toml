@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ariadne-utils"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Marc Ford <mrfxyz567@gmail.com>"]
 license = "MIT"
@@ -16,6 +16,11 @@ click = "^7.1.2"
 python-dateutil = "^2.8.1"
 validator-collection = "^1.4.2"
 pytimeparse = "^1.1.8"
+django = { version = "^2.2", optional = true }
+channels = { version = "^2.4", optional = true }
+
+[tool.poetry.extras]
+django = ["django", "channels"]
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
