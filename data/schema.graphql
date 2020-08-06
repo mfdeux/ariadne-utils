@@ -1,0 +1,45 @@
+directive @date(
+  defaultFormat: String = "YYYY-MM-DDTHH:mm:ss.sss[Z]"
+) on FIELD_DEFINITION
+directive @permissions(requires: [Role] = [ADMIN]) on OBJECT | FIELD_DEFINITION
+directive @auth on FIELD_DEFINITION
+
+directive @rateLimit(
+  max: Int
+  window: String
+  message: String
+) on FIELD_DEFINITION
+
+enum Role {
+  ADMIN
+  REVIEWER
+  USER
+  UNKNOWN
+}
+
+scalar Date
+scalar DateTime
+scalar EmailAddress
+scalar URL
+scalar JSON
+scalar Currency
+scalar Upload
+scalar UUID
+
+
+type Query {
+  _empty: String
+}
+
+type Mutation {
+  _empty: String
+}
+
+type Subscription {
+  _empty: String
+}
+
+input PaginationInput {
+    limit: Int
+    offset: Int
+}
